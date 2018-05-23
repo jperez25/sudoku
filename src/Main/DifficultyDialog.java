@@ -8,13 +8,19 @@ import java.util.Optional;
 
 public class DifficultyDialog {
 
+    //there are four buttons and one alert for this dialog
+
+    //if a more pretty ui is required we can load fxml files and add them to the alert
+
     private Alert alert;
     private ButtonType buttonEasy;
     private ButtonType buttonMedium;
     private ButtonType buttonHard;
     private ButtonType buttonCancel;
+    Optional<ButtonType> result;
 
 
+    //creates a dialog box from wehere the user can choose the difficulty
     public DifficultyDialog(){
 
         alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -31,8 +37,9 @@ public class DifficultyDialog {
     }
 
 
+    //returns the difficulty the user selects
     public int difficulty(){
-        Optional<ButtonType> result = alert.showAndWait();
+        result = alert.showAndWait();
         if (result.get() == buttonEasy){
             return 1;
         } else if (result.get() == buttonMedium) {

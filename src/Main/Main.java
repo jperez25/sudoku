@@ -8,8 +8,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Stage primaryStage = new Stage();
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStag) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("../UI/HomeScreen.fxml"));
         primaryStage.setTitle("Sudoku");
         primaryStage.setScene(new Scene(root));
