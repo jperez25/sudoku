@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/GridClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/PlayScreen.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/DifficultyDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/DifficultyDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/HowToPlayDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/HowToPlayDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/GridClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GridClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/PlayScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PlayScreen.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -94,31 +90,33 @@
       </file>
       <file leaf-file-name="PlayScreen.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UI/PlayScreen.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GridClass.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GridClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main/GridClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="289">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#640#641#0" expanded="true" />
+                <element signature="e#666#667#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayScreenController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayScreenController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/PlayScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+            <state relative-caret-position="447">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -153,10 +151,10 @@
         <option value="$PROJECT_DIR$/src/Main/HowToPlayDialog.java" />
         <option value="$PROJECT_DIR$/src/Main/DifficultyDialog.java" />
         <option value="$PROJECT_DIR$/src/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/Main/GridClass.java" />
         <option value="$PROJECT_DIR$/src/Controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/src/UI/PlayScreen.fxml" />
         <option value="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" />
+        <option value="$PROJECT_DIR$/src/Main/GridClass.java" />
       </list>
     </option>
   </component>
@@ -200,12 +198,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="sudoku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="sudoku" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -231,6 +223,116 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\school\sudoku\src\UI" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Main/CreatePuzzle.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -375,7 +477,8 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Home Screen UI" />
     <MESSAGE value="Home Screen Logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Home Screen Logic" />
+    <MESSAGE value="Grid class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Grid class" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -513,29 +616,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/PlayScreen.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/GridClass.java">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/PlayScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="447">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/PlayScreenController.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/GridClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        <state relative-caret-position="289">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#640#641#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
           </folding>
         </state>
       </provider>

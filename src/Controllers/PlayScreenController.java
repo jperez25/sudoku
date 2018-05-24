@@ -2,8 +2,10 @@ package Controllers;
 
 import Main.GridClass;
 import Main.Main;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -26,6 +28,7 @@ public class PlayScreenController {
 
         GridClass gr = new GridClass();
         parent.getChildren().add(gr.getGrid());
+
 
         TheButton.setOnAction(event -> {
             System.out.println(difficulty);
