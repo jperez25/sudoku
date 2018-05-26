@@ -12,8 +12,20 @@ public class GridClass extends GridPane{
         grid.setPadding(new Insets(10));
         grid.setHgap(10);
         grid.setVgap(10);
-        grid.setLayoutX(200.0);
-        grid.setLayoutY(150.0);
+        grid.setLayoutX(180.0);
+        grid.setLayoutY(100.0);
+
+        //here we use CreatePuzzle and Random to assign the numbers
+        CreatePuzzle x = new CreatePuzzle();
+        int[][] j = x.getPuzzle();
+        System.out.println(x.rec(1) );
+
+        for (int num[] : j){
+            for (int num2 : num){
+                System.out.print(num2 + " ");
+            }
+            System.out.println();
+        }
 
         int col = 0;
         for (int r = 0; r < 9; r++) {
@@ -21,7 +33,7 @@ public class GridClass extends GridPane{
             gr.setGridLinesVisible(true);
 
             for (int c = 0; c < 9; c++) {
-                //here we use CreatePuzzle and Random to assign the numbers
+
                 int number = 9 * r + c;
                 CellClass cell = new CellClass(number);
 

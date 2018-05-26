@@ -1,6 +1,6 @@
 package Controllers;
 
-import Main.GridClass;
+import Main.*;
 import Main.Main;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -27,11 +27,18 @@ public class PlayScreenController {
     public void initialize(){
 
         GridClass gr = new GridClass();
+        OptionsClass options = new OptionsClass();
         parent.getChildren().add(gr.getGrid());
+        parent.getChildren().add(options.getPane());
+
+        //size is zero
+        //ObservableList<Node> innerGrids = gr.getChildren();
 
 
         TheButton.setOnAction(event -> {
             System.out.println(difficulty);
+
+
         });
 
 
