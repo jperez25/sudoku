@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class CreatePuzzle {
+    //This is the puzzle we return
     private int[][] puzzle = new int[9][9];
+
     private Random random = new Random();
     private int[] whatRow = new int[10];
     private int[] whatCol = new int[10];
@@ -45,6 +47,7 @@ public class CreatePuzzle {
             //upper middle box 2
             System.out.println("made it to box two with " + iterationNum);
             printArray();
+
             box = false;
             while (!box) {
                 randomRow = 0;
@@ -67,15 +70,19 @@ public class CreatePuzzle {
                 randomCol = random.nextInt(3) +3;
 
                 if (puzzle[randomRow][randomCol] == 0){
+
                     puzzle[randomRow][randomCol] = iterationNum;
                     whatRow[2] = randomRow;
                     whatCol[2] = randomCol;
                     box = true;
+
                 }
             }
+
             //upper right box 3
             System.out.println("made it to box three with " + iterationNum);
             printArray();
+
             box = false;
             while(!box){
                 randomRow = 0;
@@ -122,10 +129,12 @@ public class CreatePuzzle {
                     box = true;
                 }
 
+
             }
             //middle right box 4
             System.out.println("made it to box four with " + iterationNum);
             printArray();
+
             box = false;
             while (!box) {
                 randomCol = 0;
@@ -145,6 +154,7 @@ public class CreatePuzzle {
                         randomCol = random.nextInt(2);
                         break;
                 }
+
                 randomRow = random.nextInt(3) + 3;
                 if (puzzle[randomRow][randomCol] == 0) {
                     puzzle[randomRow][randomCol] = iterationNum;
@@ -156,6 +166,7 @@ public class CreatePuzzle {
             //bottom right box 7
             System.out.println("made it to box seven with " + iterationNum);
             printArray();
+
             box = false;
             while (!box) {
                 randomCol = 0;
@@ -195,6 +206,7 @@ public class CreatePuzzle {
                         break;
                 }
 
+
                 randomRow = random.nextInt(3) + 6;
                 if (puzzle[randomRow][randomCol] == 0){
                     puzzle[randomRow][randomCol] = iterationNum;
@@ -206,6 +218,7 @@ public class CreatePuzzle {
             //middle middle box 5
             System.out.println("made it to box five with " + iterationNum);
             printArray();
+
             box = false;
             while (!box){
 
@@ -244,6 +257,7 @@ public class CreatePuzzle {
                         randomCol = random.nextInt(2) +3;
                         break;
                 }
+
                 if (puzzle[randomRow][randomCol] == 0){
                     puzzle[randomRow][randomCol] = iterationNum;
                     whatRow[5] = randomRow;
@@ -254,6 +268,7 @@ public class CreatePuzzle {
             //bottom middle box 8
             System.out.println("made it to box eight with " + iterationNum);
             printArray();
+
             box = false;
             while (!box){
                 randomRow = 0;
@@ -317,10 +332,12 @@ public class CreatePuzzle {
                     box = true;
                 }
 
+
             }
             //middle right box 6
             System.out.println("made it to box six with " + iterationNum);
             printArray();
+
             box = false;
             while (!box){
                 randomRow = 0;
@@ -376,6 +393,7 @@ public class CreatePuzzle {
                         randomCol = random.nextInt(2) +6;
                         break;
                 }
+
                 if (puzzle[randomRow][randomCol] == 0){
                     puzzle[randomRow][randomCol] = iterationNum;
                     whatRow[6] = randomRow;
@@ -386,6 +404,7 @@ public class CreatePuzzle {
             //bottom right box 9
             System.out.println("made it to box nine with " + iterationNum);
             printArray();
+
             box = false;
             while (!box){
                 randomRow = 0;
@@ -424,6 +443,7 @@ public class CreatePuzzle {
                         }
                         break;
                 }
+
 
                 randomCol = 0;
                 switch (whatCol[3]){
@@ -471,10 +491,86 @@ public class CreatePuzzle {
 
             printArray();
             recusivePuzzle(iterationNum +=1);
+
         }
+    }
 
 
-        return puzzle;
+    private  int[][] recursivePuzzleV2(int callNumber){
+        random = new Random();
+
+        //I dont know what these statements are for
+        Arrays.fill(rowTracker, Boolean.TRUE);
+        Arrays.fill(colTracker, Boolean.TRUE);
+
+        //return puzzle if callNumber is greater than 9
+        if(callNumber >= 10){
+            return puzzle;
+        }
+        //I simplified your code
+        else{
+            /*
+            1 4 7
+            2 5 8
+            3 6 9
+             */
+            //box 1
+            checkingTheBoxes(3,0,0,callNumber);
+            //box 2
+            checkingTheBoxes(3,3,0,callNumber);
+            //box 3
+            checkingTheBoxes(3,6,0,callNumber);
+
+/*
+            //box 4
+            checkingTheBoxes(3,0,3,callNumber);
+            //box 5
+            checkingTheBoxes(3,3,3,callNumber);
+            //box 6
+            checkingTheBoxes(3,6,3,callNumber);
+
+
+            //box 7
+            checkingTheBoxes(3,0,6,callNumber);
+            //box 8
+            checkingTheBoxes(3,3,6,callNumber);
+            //box 9
+            checkingTheBoxes(3,6,6,callNumber);
+*/
+
+            System.out.println();
+
+            return recursivePuzzleV2(++callNumber);
+        }
+    }
+
+    private void checkingTheBoxes(int lowerBound, int maxBoundRow, int maxBoundCol, int callNumber){
+        System.out.println("made it to box "+callNumber+" with " + callNumber);
+        boolean box = false;
+        while (!box){
+            boolean foundCol = false;
+            boolean foundRow = false;
+            int randomRow = random.nextInt(lowerBound) +maxBoundRow;
+            int randomCol = random.nextInt( lowerBound) +maxBoundCol;
+
+            while(!rowTracker[randomRow]){
+                randomRow = random.nextInt(lowerBound) +maxBoundRow;
+            }
+            foundRow = true;
+            while(!colTracker[randomCol]){
+                randomCol = random.nextInt(lowerBound) +maxBoundCol;
+            }
+            foundCol = true;
+
+            if(puzzle[randomRow][randomCol] == 0) {
+                if((foundCol) && (foundRow)){
+                    puzzle[randomRow][randomCol] = callNumber;
+                    box = true;
+                    rowTracker[randomRow] = false;
+                    colTracker[randomCol] = false;
+                }
+            }
+        }
     }
 }
 
