@@ -18,7 +18,7 @@ public class GridClass extends GridPane{
         //here we use CreatePuzzle and Random to assign the numbers
         CreatePuzzle x = new CreatePuzzle();
         int[][] j = x.getPuzzle();
-        System.out.println(x.rec(1) );
+        //System.out.println(x.rec(1) );
 
         for (int num[] : j){
             for (int num2 : num){
@@ -35,6 +35,21 @@ public class GridClass extends GridPane{
             for (int c = 0; c < 9; c++) {
 
                 int number = 9 * r + c;
+                //depending on the difficulty we assign the puzzle to the cells
+                switch (number){
+                    //easy
+                    case 1:
+                        break;
+                     //medium
+                    case 2:
+                        break;
+                     //hard
+                    case 3:
+                        break;
+                     //I dunno
+                        default:
+                            break;
+                }
                 CellClass cell = new CellClass(number);
 
                 if(c < 3){

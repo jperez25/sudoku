@@ -1,17 +1,28 @@
 package Main;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 public class CreatePuzzle {
     //This is the puzzle we return
     private int[][] puzzle = new int[9][9];
 
+    public CreatePuzzle(){
+        //just in case we need it later
+    }
+
+    private boolean[] rowTracker = new boolean[9];
+    private boolean[] colTracker = new boolean[9];
+
     private Random random = new Random();
     private int[] whatRow = new int[10];
     private int[] whatCol = new int[10];
 
-    private static void printArray(){
+    private void printArray(){
+
+    }
+
+    public int[][] getPuzzle(){
+        return iterationPuzzle();
 
     }
 
@@ -21,7 +32,7 @@ public class CreatePuzzle {
         int randomCol;
 
         if(iterationNum > 9){
-
+            return puzzle;
         }else {
             int col;
             int row;
@@ -489,8 +500,7 @@ public class CreatePuzzle {
                 }
             }
 
-            printArray();
-            recusivePuzzle(iterationNum +=1);
+            return recusivePuzzle(++iterationNum);
 
         }
     }
@@ -571,6 +581,120 @@ public class CreatePuzzle {
                 }
             }
         }
+    }
+
+
+    private int[][] iterationPuzzle(){
+        //9x9 grid
+        /*
+        each row is a box
+        first row is first set of three numbers of each box 1-3 4-6 7-9
+        second row is second set of three numbers of each box 1 4 7 etc
+
+        first col is 0 3 6 of box 1 2 and 3
+
+             col 1-3
+                |
+                v
+            1 [] [] [], [] [] [], [] [] [] <-first box
+            2 [] [] [], [] [] [], [] [] []
+            3 [] [] [], [] [] [], [] [] []
+
+              col 4-6
+                |
+                v
+            4 [] [] [], [] [] [], [] [] []
+            5 [] [] [], [] [] [], [] [] []
+            6 [] [] [], [] [] [], [] [] []
+
+              col 7-9
+                 |
+                 v
+            7 [] [] [], [] [] [], [] [] []
+            8 [] [] [], [] [] [], [] [] []
+            9 [] [] [], [] [] [], [] [] []
+
+
+         */
+
+        //This keeps track of the current row
+        int index = 0;
+        //debugging purposes
+        int iterations  = 0; //from infinity to less 100 iterations
+
+        for (int r = 0; r < 9; r++) {
+
+            //keeps track of the used cols on ech row
+            boolean[] colsUSed = new boolean[9];
+
+            //debugging purposes
+            System.out.println("Next Row +++++++++++++++++++++++++++++++");
+
+            //num is put in cell and increased for the next iteration
+            int num = 1;
+            //check if our current row is all set before exiting loop
+            while (!isRowAllSet(index)){
+
+                //debugging purposes
+                System.out.println(iterations);
+                iterations++;
+
+                //if cols is already in use, skip to next iteration
+                //until we found a empty cell
+                int randomCell = random.nextInt(8);
+                while (colsUSed[randomCell]){
+                    randomCell = random.nextInt(8);
+                }
+
+
+                //if num goes higher than 9 decreased back to 1 and start algorithm again
+                if (num > 9){
+                    num  = 1;
+                    continue;
+                }
+
+                //if a num has not been assigned to a cell
+                if (puzzle[index][randomCell] == 0){
+
+                    puzzle[index][randomCell] = num;
+                    colsUSed[randomCell] = true;
+
+                }
+
+                num++;
+            }
+            index++;
+        }
+
+
+        return puzzle;
+    }
+
+    private boolean isRowAllSet(int row){
+        boolean allSet = true;
+        int[] temp = new int[9];
+
+        for (int i = 0; i < temp.length-1; i++) {
+            temp[i] = puzzle[row][i];
+        }
+
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                System.out.print(puzzle[r][c]);
+            }
+            System.out.println();
+        }
+
+
+
+        //if any number is set to zero row is still incomplete
+        for (int x : temp){
+            if (x == 0){
+                return false;
+            }
+        }
+
+        return allSet;
     }
 }
 

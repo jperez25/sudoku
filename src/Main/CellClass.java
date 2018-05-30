@@ -24,6 +24,8 @@ public class CellClass{
         cell.setEditable(false);
     }
 
+
+
     public TextField getCell(){
         return cell;
     }
