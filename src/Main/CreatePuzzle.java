@@ -624,7 +624,7 @@ public class CreatePuzzle {
 
         for (int r = 0; r < 9; r++) {
 
-            //keeps track of the used cols on ech row
+            //keeps track of the used cols on each row
             boolean[] colsUSed = new boolean[9];
 
             //debugging purposes
@@ -636,22 +636,21 @@ public class CreatePuzzle {
             while (!isRowAllSet(index)){
 
                 //debugging purposes
-                System.out.println(iterations);
+                System.out.println(num);
                 iterations++;
 
                 //if cols is already in use, skip to next iteration
                 //until we found a empty cell
-                int randomCell = random.nextInt(8);
+                int randomCell = random.nextInt(9);
                 while (colsUSed[randomCell]){
-                    randomCell = random.nextInt(8);
+                    randomCell = random.nextInt(9);
                 }
 
 
                 //if num goes higher than 9 decreased back to 1 and start algorithm again
-                if (num > 9){
-                    num  = 1;
-                    continue;
-                }
+               if (num > 9){
+                    break;
+               }
 
                 //if a num has not been assigned to a cell
                 if (puzzle[index][randomCell] == 0){

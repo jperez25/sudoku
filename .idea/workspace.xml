@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/CellClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/CellClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main/CellClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sudoku/Main/CellClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main/CreatePuzzle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sudoku/Main/CreatePuzzle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main/GridClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sudoku/Main/GridClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/CreatePuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/CreatePuzzle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/GridClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GridClass.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,8 +91,8 @@
       <file leaf-file-name="CreatePuzzle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main/CreatePuzzle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="635" selection-start-line="635" selection-end-line="635" />
+            <state relative-caret-position="1017">
+              <caret line="692" column="13" selection-start-line="692" selection-start-column="13" selection-end-line="692" selection-end-column="13" />
               <folding>
                 <element signature="method#recusivePuzzle#0;class#CreatePuzzle#0" />
                 <element signature="method#recursivePuzzleV2#0;class#CreatePuzzle#0" />
@@ -452,13 +452,13 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32943678" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.20729166" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3995749" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -488,24 +488,11 @@
     <MESSAGE value="Grid class v.2" />
     <MESSAGE value="Grid class v.3" />
     <MESSAGE value="Create Puzzle v.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Puzzle v.2" />
+    <MESSAGE value="Create Puzzle v.4 iteration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Puzzle v.4 iteration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main/CreatePuzzle.java</url>
-          <line>624</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main/CreatePuzzle.java</url>
-          <line>635</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="20" />
     </breakpoint-manager>
   </component>
@@ -714,8 +701,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/CreatePuzzle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="635" selection-start-line="635" selection-end-line="635" />
+        <state relative-caret-position="1017">
+          <caret line="692" column="13" selection-start-line="692" selection-start-column="13" selection-end-line="692" selection-end-column="13" />
           <folding>
             <element signature="method#recusivePuzzle#0;class#CreatePuzzle#0" />
             <element signature="method#recursivePuzzleV2#0;class#CreatePuzzle#0" />
