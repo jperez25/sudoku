@@ -636,11 +636,11 @@ public class CreatePuzzle {
             while (!isRowAllSet(index)){
 
                 //debugging purposes
-                System.out.println(num);
+                System.out.println(iterations);
                 iterations++;
 
-                //if cols is already in use, skip to next iteration
-                //until we found a empty cell
+                //if col/cell is already in use, skip to next iteration
+                //until we found an empty cell
                 int randomCell = random.nextInt(9);
                 while (colsUSed[randomCell]){
                     randomCell = random.nextInt(9);
@@ -648,16 +648,30 @@ public class CreatePuzzle {
 
 
                 //if num goes higher than 9 decreased back to 1 and start algorithm again
-               if (num > 9){
-                    break;
-               }
+
 
                 //if a num has not been assigned to a cell
+                //zero means no number has been assign to the cell
                 if (puzzle[index][randomCell] == 0){
+                    //if num is in the column continue to next iteration
+                    if (isNumInCol(randomCell, num)){
+                        //find a num that has not been taken
+                        for (int i = 1; i <= 9; i++) {
 
-                    puzzle[index][randomCell] = num;
-                    colsUSed[randomCell] = true;
+                            //it's going to return true if we find the number
+                            //if we do not find num/i in col assign it
+                            if (!isNumInCol(randomCell, i)){
 
+                                puzzle[index][randomCell] = i;
+                                colsUSed[randomCell] = true;
+                                break;
+                            }
+                        }
+                    }
+                    else {
+                        puzzle[index][randomCell] = num;
+                        colsUSed[randomCell] = true;
+                    }
                 }
 
                 num++;
@@ -673,7 +687,7 @@ public class CreatePuzzle {
         boolean allSet = true;
         int[] temp = new int[9];
 
-        for (int i = 0; i < temp.length-1; i++) {
+        for (int i = 0; i < temp.length; i++) {
             temp[i] = puzzle[row][i];
         }
 
@@ -694,6 +708,17 @@ public class CreatePuzzle {
         }
 
         return allSet;
+    }
+
+    private boolean isNumInCol(int col, int num){
+
+        for (int i = 0; i < 9; i++) {
+            if (puzzle[i][col] == num){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 

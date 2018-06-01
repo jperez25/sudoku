@@ -1,7 +1,10 @@
 package Main;
 
+import Controllers.PlayScreenController;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
+
+import java.util.Random;
 
 public class GridClass extends GridPane{
 
@@ -27,31 +30,87 @@ public class GridClass extends GridPane{
             System.out.println();
         }
 
+        int numbersOfCellsForTheDifficutly = 0;
+        int numsPerSmallGrid = 0;
+        int number;
+        CellClass cell = null;
         int col = 0;
         for (int r = 0; r < 9; r++) {
             GridPane gr = new GridPane();
             gr.setGridLinesVisible(true);
 
+            numsPerSmallGrid = 0;
+
             for (int c = 0; c < 9; c++) {
 
-                int number = 9 * r + c;
+
                 //depending on the difficulty we assign the puzzle to the cells
-                switch (number){
-                    //easy
+                switch (PlayScreenController.difficulty){
+                    //easy, we give 30 cells
+                    //about 3 numbers per 9x9 grid
                     case 1:
+                        if (numsPerSmallGrid < 3){
+                            Random rnd = new Random();
+                            if (rnd.nextBoolean()){
+                                number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
+                                numsPerSmallGrid++;
+                                cell = new CellClass(number);
+                            }
+                            else{
+                                cell = new CellClass();
+                            }
+                        }
+                        else if(numsPerSmallGrid >= 3){
+                            cell = new CellClass();
+                        }
+                        else{
+
+                        }
+
+
                         break;
-                     //medium
+                     //medium we give 23 cells
                     case 2:
+                        if (numsPerSmallGrid < 2){
+                            Random rnd = new Random();
+                            if (rnd.nextBoolean()){
+                                number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
+                                numsPerSmallGrid++;
+                                cell = new CellClass(number);
+                            }
+                            else{
+                                cell = new CellClass();
+                            }
+                        }
+                        else if(numsPerSmallGrid >= 2){
+                            cell = new CellClass();
+                        }
+
                         break;
-                     //hard
+                     //hard we give 17 cells
                     case 3:
+                        if (numsPerSmallGrid < 1){
+                            Random rnd = new Random();
+                            if (rnd.nextBoolean()){
+                                number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
+                                numsPerSmallGrid++;
+                                cell = new CellClass(number);
+                            }
+                            else{
+                                cell = new CellClass();
+                            }
+                        }
+                        else if(numsPerSmallGrid >= 1){
+                            cell = new CellClass();
+                        }
                         break;
                      //I dunno
-                        default:
+                    default:
                             break;
                 }
-                CellClass cell = new CellClass(number);
 
+
+                //where to add the cells
                 if(c < 3){
                     gr.add(cell.getCell(), c, r);
                 }

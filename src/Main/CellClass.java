@@ -8,7 +8,7 @@ public class CellClass{
     private TextField cell;
 
     public CellClass(){
-        cell = new TextField();
+        cell = new TextField("");
         cell.setMaxWidth(40);
         cell.setMinWidth(40);
         cell.setMaxHeight(40);
