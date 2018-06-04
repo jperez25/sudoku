@@ -22,7 +22,8 @@ public class CreatePuzzle {
     }
 
     public int[][] getPuzzle(){
-        return iterationPuzzle();
+        shiftingRows();
+        return puzzle;
 
     }
 
@@ -583,6 +584,48 @@ public class CreatePuzzle {
         }
     }
 
+    private void shiftingRows(){
+        Random rd = new Random();
+        int row = 0;
+        int num = 0;
+        int i = 0;
+
+            while(!isRowAllSet(row)){
+                num = rd.nextInt(9)+1;
+
+                if (isNumInRow(row,num)){
+                    continue;
+                }
+                else{
+                    puzzle[row][i] = num;
+                    i++;
+                }
+            }
+            shiftLeft(0,1,3);
+            shiftLeft(1,2,3);
+
+            shiftLeft(2,3,1);
+            shiftLeft(3,4,3);
+            shiftLeft(4,5,3);
+
+            shiftLeft(5,6,1);
+            shiftLeft(6,7,3);
+            shiftLeft(7,8,3);
+
+    }
+
+    private void shiftLeft(int usingRow, int affectedRow, int numberOfShifts){
+        int[] temp = new int[9];
+
+        for (int i = 0; i < 9; i++) {
+            if (numberOfShifts > 8){
+                numberOfShifts = 0;
+            }
+            puzzle[affectedRow][i] = puzzle[usingRow][numberOfShifts];
+
+            numberOfShifts++;
+        }
+    }
 
     private int[][] iterationPuzzle(){
         //9x9 grid
@@ -653,8 +696,8 @@ public class CreatePuzzle {
                 //if a num has not been assigned to a cell
                 //zero means no number has been assign to the cell
                 if (puzzle[index][randomCell] == 0){
-                    //if num is in the column continue to next iteration
-                    if (isNumInCol(randomCell, num)){
+                    //if num is found in row select other number to put in the cell
+                    if (isNumInRow(index, num)){
                         //find a num that has not been taken
                         for (int i = 1; i <= 9; i++) {
 
@@ -666,8 +709,13 @@ public class CreatePuzzle {
                                 colsUSed[randomCell] = true;
                                 break;
                             }
+                            else{
+                                puzzle[index][randomCell] = i;
+                                colsUSed[randomCell] = true;
+                            }
                         }
                     }
+                    //if num is not in row put that number in that row/cell
                     else {
                         puzzle[index][randomCell] = num;
                         colsUSed[randomCell] = true;
@@ -718,6 +766,16 @@ public class CreatePuzzle {
             }
         }
 
+        return false;
+    }
+
+    private boolean isNumInRow(int row, int num){
+
+        for (int i = 0; i < 9; i++) {
+            if (puzzle[row][i] == num){
+                return true;
+            }
+        }
         return false;
     }
 }

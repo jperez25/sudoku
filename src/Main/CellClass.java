@@ -22,6 +22,7 @@ public class CellClass{
         cell.setMaxHeight(40);
         cell.setMinHeight(40);
         cell.setEditable(false);
+        cell.setStyle("-fx-background-color: gray");
     }
 
 

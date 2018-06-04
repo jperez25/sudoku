@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main/CellClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sudoku/Main/CellClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main/CreatePuzzle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sudoku/Main/CreatePuzzle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sudoku/Main/GridClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sudoku/Main/GridClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/CellClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/CellClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/CreatePuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/CreatePuzzle.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -91,12 +92,17 @@
       <file leaf-file-name="CreatePuzzle.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main/CreatePuzzle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1017">
-              <caret line="692" column="13" selection-start-line="692" selection-start-column="13" selection-end-line="692" selection-end-column="13" />
+            <state relative-caret-position="362">
+              <caret line="611" column="19" selection-start-line="611" selection-start-column="19" selection-end-line="611" selection-end-column="19" />
               <folding>
                 <element signature="method#recusivePuzzle#0;class#CreatePuzzle#0" />
                 <element signature="method#recursivePuzzleV2#0;class#CreatePuzzle#0" />
                 <element signature="method#checkingTheBoxes#0;class#CreatePuzzle#0" />
+                <element signature="method#shiftLeft#0;class#CreatePuzzle#0" />
+                <element signature="method#iterationPuzzle#0;class#CreatePuzzle#0" />
+                <element signature="method#isRowAllSet#0;class#CreatePuzzle#0" />
+                <element signature="method#isNumInCol#0;class#CreatePuzzle#0" />
+                <element signature="method#isNumInRow#0;class#CreatePuzzle#0" />
               </folding>
             </state>
           </provider>
@@ -105,12 +111,12 @@
       <file leaf-file-name="GridClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main/GridClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="1444">
+              <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1940#1941#0" expanded="true" />
-                <element signature="e#1967#1968#0" expanded="true" />
+                <element signature="e#2854#2855#0" expanded="true" />
+                <element signature="e#2881#2882#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,8 +125,8 @@
       <file leaf-file-name="PlayScreenController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/PlayScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
+            <state relative-caret-position="194">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,8 +164,8 @@
         <option value="$PROJECT_DIR$/src/Controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/src/UI/PlayScreen.fxml" />
         <option value="$PROJECT_DIR$/src/Main/OptionsClass.java" />
-        <option value="$PROJECT_DIR$/src/Main/GridClass.java" />
         <option value="$PROJECT_DIR$/src/Controllers/PlayScreenController.java" />
+        <option value="$PROJECT_DIR$/src/Main/GridClass.java" />
         <option value="$PROJECT_DIR$/src/Main/CellClass.java" />
         <option value="$PROJECT_DIR$/src/Main/CreatePuzzle.java" />
       </list>
@@ -489,11 +495,21 @@
     <MESSAGE value="Grid class v.3" />
     <MESSAGE value="Create Puzzle v.2" />
     <MESSAGE value="Create Puzzle v.4 iteration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Puzzle v.4 iteration" />
+    <MESSAGE value="Create Puzzle v.5 iteration" />
+    <MESSAGE value="Create Puzzle v.6 cols and rows are unique" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Puzzle v.6 cols and rows are unique" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main/CreatePuzzle.java</url>
+          <line>707</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -647,38 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/PlayScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/CellClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/GridClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1940#1941#0" expanded="true" />
-            <element signature="e#1967#1968#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -699,14 +683,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controllers/PlayScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/CellClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/GridClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1444">
+          <caret line="102" column="53" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2854#2855#0" expanded="true" />
+            <element signature="e#2881#2882#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/CreatePuzzle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1017">
-          <caret line="692" column="13" selection-start-line="692" selection-start-column="13" selection-end-line="692" selection-end-column="13" />
+        <state relative-caret-position="362">
+          <caret line="611" column="19" selection-start-line="611" selection-start-column="19" selection-end-line="611" selection-end-column="19" />
           <folding>
             <element signature="method#recusivePuzzle#0;class#CreatePuzzle#0" />
             <element signature="method#recursivePuzzleV2#0;class#CreatePuzzle#0" />
             <element signature="method#checkingTheBoxes#0;class#CreatePuzzle#0" />
+            <element signature="method#shiftLeft#0;class#CreatePuzzle#0" />
+            <element signature="method#iterationPuzzle#0;class#CreatePuzzle#0" />
+            <element signature="method#isRowAllSet#0;class#CreatePuzzle#0" />
+            <element signature="method#isNumInCol#0;class#CreatePuzzle#0" />
+            <element signature="method#isNumInRow#0;class#CreatePuzzle#0" />
           </folding>
         </state>
       </provider>
