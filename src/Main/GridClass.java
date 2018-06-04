@@ -51,7 +51,10 @@ public class GridClass extends GridPane{
                     case 1:
                         if (numsPerSmallGrid < 3){
                             Random rnd = new Random();
+                            //we decide if cell has a number or is blank
                             if (rnd.nextBoolean()){
+                                //get a random number from box 1-9
+                                //bug is here
                                 number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);

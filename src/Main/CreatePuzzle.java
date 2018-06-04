@@ -27,6 +27,49 @@ public class CreatePuzzle {
 
     }
 
+    private void shiftingRows(){
+        Random rd = new Random();
+        int row = 0;
+        int num = 0;
+        int i = 0;
+
+        while(!isRowAllSet(row)){
+            num = rd.nextInt(9)+1;
+
+            if (isNumInRow(row,num)){
+                continue;
+            }
+            else{
+                puzzle[row][i] = num;
+                i++;
+            }
+        }
+        shiftLeft(0,1,3);
+        shiftLeft(1,2,3);
+
+        shiftLeft(2,3,1);
+        shiftLeft(3,4,3);
+        shiftLeft(4,5,3);
+
+        shiftLeft(5,6,1);
+        shiftLeft(6,7,3);
+        shiftLeft(7,8,3);
+
+    }
+
+    private void shiftLeft(int usingRow, int affectedRow, int numberOfShifts){
+        int[] temp = new int[9];
+
+        for (int i = 0; i < 9; i++) {
+            if (numberOfShifts > 8){
+                numberOfShifts = 0;
+            }
+            puzzle[affectedRow][i] = puzzle[usingRow][numberOfShifts];
+
+            numberOfShifts++;
+        }
+    }
+
     private int[][] recusivePuzzle(int iterationNum){
         Random random = new Random();
         int randomRow;
@@ -506,7 +549,6 @@ public class CreatePuzzle {
         }
     }
 
-
     private  int[][] recursivePuzzleV2(int callNumber){
         random = new Random();
 
@@ -581,49 +623,6 @@ public class CreatePuzzle {
                     colTracker[randomCol] = false;
                 }
             }
-        }
-    }
-
-    private void shiftingRows(){
-        Random rd = new Random();
-        int row = 0;
-        int num = 0;
-        int i = 0;
-
-            while(!isRowAllSet(row)){
-                num = rd.nextInt(9)+1;
-
-                if (isNumInRow(row,num)){
-                    continue;
-                }
-                else{
-                    puzzle[row][i] = num;
-                    i++;
-                }
-            }
-            shiftLeft(0,1,3);
-            shiftLeft(1,2,3);
-
-            shiftLeft(2,3,1);
-            shiftLeft(3,4,3);
-            shiftLeft(4,5,3);
-
-            shiftLeft(5,6,1);
-            shiftLeft(6,7,3);
-            shiftLeft(7,8,3);
-
-    }
-
-    private void shiftLeft(int usingRow, int affectedRow, int numberOfShifts){
-        int[] temp = new int[9];
-
-        for (int i = 0; i < 9; i++) {
-            if (numberOfShifts > 8){
-                numberOfShifts = 0;
-            }
-            puzzle[affectedRow][i] = puzzle[usingRow][numberOfShifts];
-
-            numberOfShifts++;
         }
     }
 
