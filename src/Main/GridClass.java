@@ -55,7 +55,7 @@ public class GridClass extends GridPane{
                             if (rnd.nextBoolean()){
                                 //get a random number from box 1-9
                                 //bug is here
-                                number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
+                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);
                             }
@@ -77,7 +77,7 @@ public class GridClass extends GridPane{
                         if (numsPerSmallGrid < 2){
                             Random rnd = new Random();
                             if (rnd.nextBoolean()){
-                                number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
+                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);
                             }
@@ -95,7 +95,7 @@ public class GridClass extends GridPane{
                         if (numsPerSmallGrid < 1){
                             Random rnd = new Random();
                             if (rnd.nextBoolean()){
-                                number = j[(int)Math.random()*3 +1][(int)Math.random()*3 +1];
+                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);
                             }
