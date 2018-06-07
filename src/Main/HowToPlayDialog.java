@@ -18,7 +18,8 @@ public class HowToPlayDialog {
 
     //Creates a dialog box that explains how to play sudoku
     public HowToPlayDialog(){
-        HowToPlay = "Type something here Sheldon";
+        HowToPlay = "The goal of Sudoku is to get numbers 1-9 in all rows boxes in columns, but there can not be two of any particular number in a box, row, or column. If a number is repeated " +
+                "you probably put a wrong number down somewhere.";
 
         alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Sudoku");
