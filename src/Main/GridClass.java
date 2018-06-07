@@ -1,7 +1,10 @@
 package Main;
 
+import Controllers.PlayScreenController;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
+
+import java.util.Random;
 
 public class GridClass extends GridPane{
 
@@ -18,7 +21,7 @@ public class GridClass extends GridPane{
         //here we use CreatePuzzle and Random to assign the numbers
         CreatePuzzle x = new CreatePuzzle();
         int[][] j = x.getPuzzle();
-        System.out.println(x.rec(1) );
+        //System.out.println(x.rec(1) );
 
         for (int num[] : j){
             for (int num2 : num){
@@ -27,16 +30,90 @@ public class GridClass extends GridPane{
             System.out.println();
         }
 
+        int numbersOfCellsForTheDifficutly = 0;
+        int numsPerSmallGrid = 0;
+        int number;
+        CellClass cell = null;
         int col = 0;
         for (int r = 0; r < 9; r++) {
             GridPane gr = new GridPane();
             gr.setGridLinesVisible(true);
 
+            numsPerSmallGrid = 0;
+
             for (int c = 0; c < 9; c++) {
 
-                int number = 9 * r + c;
-                CellClass cell = new CellClass(number);
 
+                //depending on the difficulty we assign the puzzle to the cells
+                switch (PlayScreenController.difficulty){
+                    //easy, we give 30 cells
+                    //about 3 numbers per 9x9 grid
+                    case 1:
+                        if (numsPerSmallGrid < 3){
+                            Random rnd = new Random();
+                            //we decide if cell has a number or is blank
+                            if (rnd.nextBoolean()){
+                                //get a random number from box 1-9
+                                //bug is here
+                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
+                                numsPerSmallGrid++;
+                                cell = new CellClass(number);
+                            }
+                            else{
+                                cell = new CellClass();
+                            }
+                        }
+                        else if(numsPerSmallGrid >= 3){
+                            cell = new CellClass();
+                        }
+                        else{
+
+                        }
+
+
+                        break;
+                     //medium we give 23 cells
+                    case 2:
+                        if (numsPerSmallGrid < 2){
+                            Random rnd = new Random();
+                            if (rnd.nextBoolean()){
+                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
+                                numsPerSmallGrid++;
+                                cell = new CellClass(number);
+                            }
+                            else{
+                                cell = new CellClass();
+                            }
+                        }
+                        else if(numsPerSmallGrid >= 2){
+                            cell = new CellClass();
+                        }
+
+                        break;
+                     //hard we give 17 cells
+                    case 3:
+                        if (numsPerSmallGrid < 1){
+                            Random rnd = new Random();
+                            if (rnd.nextBoolean()){
+                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
+                                numsPerSmallGrid++;
+                                cell = new CellClass(number);
+                            }
+                            else{
+                                cell = new CellClass();
+                            }
+                        }
+                        else if(numsPerSmallGrid >= 1){
+                            cell = new CellClass();
+                        }
+                        break;
+                     //I dunno
+                    default:
+                            break;
+                }
+
+
+                //where to add the cells
                 if(c < 3){
                     gr.add(cell.getCell(), c, r);
                 }
