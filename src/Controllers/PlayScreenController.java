@@ -26,7 +26,7 @@ public class PlayScreenController {
     @FXML
     public void initialize(){
 
-        GridClass gr = new GridClass();
+       GridClass gr = new GridClass();
         OptionsClass options = new OptionsClass();
         parent.getChildren().add(gr.getGrid());
         parent.getChildren().add(options.getPane());

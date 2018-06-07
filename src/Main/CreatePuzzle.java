@@ -1,18 +1,73 @@
 package Main;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 public class CreatePuzzle {
     //This is the puzzle we return
     private int[][] puzzle = new int[9][9];
 
+    public CreatePuzzle(){
+        //just in case we need it later
+    }
+
+    private boolean[] rowTracker = new boolean[9];
+    private boolean[] colTracker = new boolean[9];
+
     private Random random = new Random();
     private int[] whatRow = new int[10];
     private int[] whatCol = new int[10];
 
-    private static void printArray(){
+    private void printArray(){
 
+    }
+
+    public int[][] getPuzzle(){
+        shiftingRows();
+        return puzzle;
+
+    }
+
+    private void shiftingRows(){
+        Random rd = new Random();
+        int row = 0;
+        int num = 0;
+        int i = 0;
+
+        while(!isRowAllSet(row)){
+            num = rd.nextInt(9)+1;
+
+            if (isNumInRow(row,num)){
+                continue;
+            }
+            else{
+                puzzle[row][i] = num;
+                i++;
+            }
+        }
+        shiftLeft(0,1,3);
+        shiftLeft(1,2,3);
+
+        shiftLeft(2,3,1);
+        shiftLeft(3,4,3);
+        shiftLeft(4,5,3);
+
+        shiftLeft(5,6,1);
+        shiftLeft(6,7,3);
+        shiftLeft(7,8,3);
+
+    }
+
+    private void shiftLeft(int usingRow, int affectedRow, int numberOfShifts){
+        int[] temp = new int[9];
+
+        for (int i = 0; i < 9; i++) {
+            if (numberOfShifts > 8){
+                numberOfShifts = 0;
+            }
+            puzzle[affectedRow][i] = puzzle[usingRow][numberOfShifts];
+
+            numberOfShifts++;
+        }
     }
 
     private int[][] recusivePuzzle(int iterationNum){
@@ -21,7 +76,7 @@ public class CreatePuzzle {
         int randomCol;
 
         if(iterationNum > 9){
-
+            return puzzle;
         }else {
             int col;
             int row;
@@ -489,12 +544,10 @@ public class CreatePuzzle {
                 }
             }
 
-            printArray();
-            recusivePuzzle(iterationNum +=1);
+            return recusivePuzzle(++iterationNum);
 
         }
     }
-
 
     private  int[][] recursivePuzzleV2(int callNumber){
         random = new Random();
@@ -571,6 +624,158 @@ public class CreatePuzzle {
                 }
             }
         }
+    }
+
+    private int[][] iterationPuzzle(){
+        //9x9 grid
+        /*
+        each row is a box
+        first row is first set of three numbers of each box 1-3 4-6 7-9
+        second row is second set of three numbers of each box 1 4 7 etc
+
+        first col is 0 3 6 of box 1 2 and 3
+
+             col 1-3
+                |
+                v
+            1 [] [] [], [] [] [], [] [] [] <-first box
+            2 [] [] [], [] [] [], [] [] []
+            3 [] [] [], [] [] [], [] [] []
+
+              col 4-6
+                |
+                v
+            4 [] [] [], [] [] [], [] [] []
+            5 [] [] [], [] [] [], [] [] []
+            6 [] [] [], [] [] [], [] [] []
+
+              col 7-9
+                 |
+                 v
+            7 [] [] [], [] [] [], [] [] []
+            8 [] [] [], [] [] [], [] [] []
+            9 [] [] [], [] [] [], [] [] []
+
+
+         */
+
+        //This keeps track of the current row
+        int index = 0;
+        //debugging purposes
+        int iterations  = 0; //from infinity to less 100 iterations
+
+        for (int r = 0; r < 9; r++) {
+
+            //keeps track of the used cols on each row
+            boolean[] colsUSed = new boolean[9];
+
+            //debugging purposes
+            System.out.println("Next Row +++++++++++++++++++++++++++++++");
+
+            //num is put in cell and increased for the next iteration
+            int num = 1;
+            //check if our current row is all set before exiting loop
+            while (!isRowAllSet(index)){
+
+                //debugging purposes
+                System.out.println(iterations);
+                iterations++;
+
+                //if col/cell is already in use, skip to next iteration
+                //until we found an empty cell
+                int randomCell = random.nextInt(9);
+                while (colsUSed[randomCell]){
+                    randomCell = random.nextInt(9);
+                }
+
+
+                //if num goes higher than 9 decreased back to 1 and start algorithm again
+
+
+                //if a num has not been assigned to a cell
+                //zero means no number has been assign to the cell
+                if (puzzle[index][randomCell] == 0){
+                    //if num is found in row select other number to put in the cell
+                    if (isNumInRow(index, num)){
+                        //find a num that has not been taken
+                        for (int i = 1; i <= 9; i++) {
+
+                            //it's going to return true if we find the number
+                            //if we do not find num/i in col assign it
+                            if (!isNumInCol(randomCell, i)){
+
+                                puzzle[index][randomCell] = i;
+                                colsUSed[randomCell] = true;
+                                break;
+                            }
+                            else{
+                                puzzle[index][randomCell] = i;
+                                colsUSed[randomCell] = true;
+                            }
+                        }
+                    }
+                    //if num is not in row put that number in that row/cell
+                    else {
+                        puzzle[index][randomCell] = num;
+                        colsUSed[randomCell] = true;
+                    }
+                }
+
+                num++;
+            }
+            index++;
+        }
+
+
+        return puzzle;
+    }
+
+    private boolean isRowAllSet(int row){
+        boolean allSet = true;
+        int[] temp = new int[9];
+
+        for (int i = 0; i < temp.length; i++) {
+            temp[i] = puzzle[row][i];
+        }
+
+        for (int r = 0; r < 9; r++) {
+            for (int c = 0; c < 9; c++) {
+                System.out.print(puzzle[r][c]);
+            }
+            System.out.println();
+        }
+
+
+
+        //if any number is set to zero row is still incomplete
+        for (int x : temp){
+            if (x == 0){
+                return false;
+            }
+        }
+
+        return allSet;
+    }
+
+    private boolean isNumInCol(int col, int num){
+
+        for (int i = 0; i < 9; i++) {
+            if (puzzle[i][col] == num){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean isNumInRow(int row, int num){
+
+        for (int i = 0; i < 9; i++) {
+            if (puzzle[row][i] == num){
+                return true;
+            }
+        }
+        return false;
     }
 }
 

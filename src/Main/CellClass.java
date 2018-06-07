@@ -8,7 +8,7 @@ public class CellClass{
     private TextField cell;
 
     public CellClass(){
-        cell = new TextField();
+        cell = new TextField("");
         cell.setMaxWidth(40);
         cell.setMinWidth(40);
         cell.setMaxHeight(40);
@@ -22,7 +22,10 @@ public class CellClass{
         cell.setMaxHeight(40);
         cell.setMinHeight(40);
         cell.setEditable(false);
+        cell.setStyle("-fx-background-color: gray");
     }
+
+
 
     public TextField getCell(){
         return cell;
