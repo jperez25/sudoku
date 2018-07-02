@@ -35,11 +35,21 @@ public class GridClass extends GridPane{
         int number;
         CellClass cell = null;
         int col = 0;
+        int row = 0;
         for (int r = 0; r < 9; r++) {
             GridPane gr = new GridPane();
             gr.setGridLinesVisible(true);
 
+            /*
+            grid is drawn like this
+            1 2 3
+            4 5 6
+            7 8 9
+             */
+
             numsPerSmallGrid = 0;
+
+
 
             for (int c = 0; c < 9; c++) {
 
@@ -55,7 +65,11 @@ public class GridClass extends GridPane{
                             if (rnd.nextBoolean()){
                                 //get a random number from box 1-9
                                 //bug is here
-                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
+                                //row col
+                                //change the bounds
+                                //(max - min) + 1) + min;
+
+                                number = j[r][c];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);
                             }
@@ -77,7 +91,7 @@ public class GridClass extends GridPane{
                         if (numsPerSmallGrid < 2){
                             Random rnd = new Random();
                             if (rnd.nextBoolean()){
-                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
+                                number = j[r][c];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);
                             }
@@ -95,7 +109,7 @@ public class GridClass extends GridPane{
                         if (numsPerSmallGrid < 1){
                             Random rnd = new Random();
                             if (rnd.nextBoolean()){
-                                number = j[rnd.nextInt(3) +1][rnd.nextInt(3) +1];
+                                number = j[r][c];
                                 numsPerSmallGrid++;
                                 cell = new CellClass(number);
                             }
@@ -131,18 +145,25 @@ public class GridClass extends GridPane{
                 }
 
             }
-            grid.add(gr,col,r <= 2? r : r%3);
+            grid.add(gr,col,row);
 
             /*
             grid is drawn like this
-            1 4 7
-            2 5 8
-            3 6 9
+            1 2 3
+            4 5 6
+            7 8 9
              */
 
-            //increase col every three iterations
+            //increase row every three iterations
             if((r+1)%3 == 0){
-                col++;
+                row++;
+            }
+
+            //increase col
+            col++;
+            //if col > 2 set to zero
+            if (col>2){
+                col = 0;
             }
         }
     }

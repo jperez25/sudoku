@@ -37,10 +37,10 @@ public class PlayScreenController {
 
         TheButton.setOnAction(event -> {
             System.out.println(difficulty);
-
-
+            System.out.println(parent.getChildren().size());
         });
 
+        TheButton.fire();
 
     }
 
